@@ -1,0 +1,22 @@
+{
+  "name": "tudobom",
+  "version": "1.0.0",
+  "description": "Morad, Jake &amp; Khaled",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebAhead5/tudoBom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebAhead5/tudoBom/issues"
+  },
+  "homepage": "https://github.com/WebAhead5/tudoBom#readme"
+}
