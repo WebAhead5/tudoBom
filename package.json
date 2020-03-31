@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape ./tests/test.js | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/WebAhead5/tudoBom/issues"
   },
-  "homepage": "https://github.com/WebAhead5/tudoBom#readme"
+  "homepage": "https://github.com/WebAhead5/tudoBom#readme",
+  "devDependencies": {
+    "tap-spec": "^5.0.0"
+  },
+  "dependencies": {
+    "tape": "^4.13.2"
+  }
 }
