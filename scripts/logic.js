@@ -1,13 +1,12 @@
 // Part 1. Fill in any missing parts of the todoFunction object!
 // you can access these on todo.todoFunctions
 // For part one we expect you to use tdd
-
 var todoFunctions = {
     // todoFunctions.generateId() will give you a unique id
     // You do not need to understand the implementation of this function.
     generateId: (function() {
       var idCounter = 0;
-  
+      
       function incrementCounter() {
         return (idCounter += 1);
       }
