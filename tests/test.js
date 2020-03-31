@@ -14,6 +14,8 @@ var newTodo = {id: 0, description: 'fouth todo', done: false}
 var obId = -2;
 var markID = -3
 
+var sortFunc = ""
+
 
 // this is our initial todoList
 //TEST VARIBLES
@@ -62,6 +64,19 @@ test('mark item', function(t) {
   var actual1 = todoFunctions.markTodo(state, markID)
   var expected2 = "object";
   t.equal(typeof(actual1), expected2, "Mark Func: should equal object")
+  t.end();
+})
+
+
+test('sort items', function(t) {
+  // t.pass();
+  var actual = 
+  var expected = 
+  t.equal(actual,expected,"")
+  
+  var actual1 = todoFunctions.sortTodo(state, sortFunc)
+  var expected2 = "object";
+  t.equal(typeof(actual1), expected2, "Sort Func: should equal object")
   t.end();
 })
 
