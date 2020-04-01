@@ -20,10 +20,15 @@
       // add span holding description
       var todoSpan = document.createElement("SPAN");
       todoSpan.textContent = todo.description;
-
-    
-      todoNode.appendChild(todoSpan);
+      console.log(todoNode)
+      if (todo.done == true) {
+        todoSpan.className = "checked";
+      }
+      else {
+        todoSpan.className = "notchecked";
+      }
    
+      todoNode.appendChild(todoSpan);
 
       // this adds the delete button
       var deleteButtonNode = document.createElement('button');
@@ -35,13 +40,16 @@
       todoNode.appendChild(deleteButtonNode);
   
 
-
-
       // add markTodo button
 
+      todoSpan.addEventListener('click', function(e) {
+        console.log(todo.id, todo.done)
+        var newState = todoFunctions.markTodo(state, todo.id);
+        update(newState);
+      })
 
-
-  
+    
+   
       // add classes for css
   
       return todoNode;
@@ -60,6 +68,7 @@
         var newState =  todoFunctions.addTodo(state, description)
   
         update(newState);
+        document.getElementById("todoInput").value = ""
       });
     }
   
