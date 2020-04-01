@@ -58,8 +58,11 @@ test('delete to do test', function(t) {
 test('mark item', function(t) {
   // t.pass();
   var actual = todoFunctions.markTodo(state, markID)[0].done;
-  var expected = state[0].done
-  t.equal(actual,expected,"mark Func: status should equal true")
+  var expected = !state[0].done
+  t.equal(actual,expected,"mark Func: status should equal true (change status)")
+  var actual = todoFunctions.markTodo(state, markID)[0].done;
+  var expected = !state[1].done
+  t.equal(actual,expected,"mark Func: status should equal false (no change to status)")
   
   var actual1 = todoFunctions.markTodo(state, markID)
   var expected2 = "object";
@@ -68,16 +71,16 @@ test('mark item', function(t) {
 })
 
 
-test('sort items', function(t) {
-  // t.pass();
-  var actual = 
-  var expected = 
-  t.equal(actual,expected,"")
+// test('sort items', function(t) {
+//   // t.pass();
+//   var actual = 
+//   var expected = state[0].id > state[1].id
+//   t.equal(actual,expected,"")
   
-  var actual1 = todoFunctions.sortTodo(state, sortFunc)
-  var expected2 = "object";
-  t.equal(typeof(actual1), expected2, "Sort Func: should equal object")
-  t.end();
-})
+//   var actual1 = todoFunctions.sortTodo(state, sortFunc)
+//   var expected2 = "object";
+//   t.equal(typeof(actual1), expected2, "Sort Func: should equal object")
+//   t.end();
+// })
 
 
