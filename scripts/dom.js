@@ -7,11 +7,16 @@
     var addTodoForm = document.getElementById('add-todo');
   
     var state = [
-      { id: -3, description: 'first todo', done: false},
-      { id: -2, description: 'second todo', done: false},
-      { id: -1, description: 'third todo', done: false },
+      { id: -3, description: 'first todo', done: false, added: Date.now()},
+      { id: 2, description: 'second todo', done: false, added: Date.now()},
+      { id: -1, description: 'third todo', done: false, added: Date.now()},
+      { id: -1, description: 'a todo', done: false, added: Date.now()},
+      { id: 1, description: 'btodo', done: false, added: Date.now()},
     ]; // this is our initial todoList
   
+    
+
+
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
       var todoNode = document.createElement('li');
@@ -20,7 +25,6 @@
       // add span holding description
       var todoSpan = document.createElement("SPAN");
       todoSpan.textContent = todo.description;
-      console.log(todoNode)
       if (todo.done == true) {
         todoSpan.className = "checked";
       }
@@ -43,15 +47,38 @@
       // add markTodo button
 
       todoSpan.addEventListener('click', function(e) {
-        console.log(todo.id, todo.done)
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
       })
 
-    
+    // sort function
+
+    document.getElementById("numBtn").addEventListener('click', function() { 
+      var numSort = function(a, b) {return a.id-b.id}
+      var newState = todoFunctions.sortTodos(state, numSort)
+      update(newState);
+    })
+
+    document.getElementById("alphaBtn").addEventListener('click', function() { 
+      var alphaSort = function(A, B) {
+        let a = A.description.toLowerCase()
+        let b = B.description.toLowerCase()
+        if(a < b ) return -1; 
+        if(a > b ) return 1; 
+        return 0; }
+        var newState = todoFunctions.sortTodos(state, alphaSort)
+        update(newState);
+      })
+
+    document.getElementById("dateBtn").addEventListener('click', function() { 
+        var dateSort = function(a, b) {return a.added - b.added}
+        var newState = todoFunctions.sortTodos(state, dateSort)
+        update(newState);
+        })
+
    
       // add classes for css
-  
+    console.log(state)
       return todoNode;
     };
   
@@ -65,9 +92,11 @@
         event.preventDefault()
 
         var description = document.getElementById("todoInput").value
+        console.log(description)
         var newState =  todoFunctions.addTodo(state, description)
   
         update(newState);
+
         document.getElementById("todoInput").value = ""
       });
     }
@@ -80,8 +109,7 @@
   
     // you do not need to change this function
     var renderState = function(state) {
-      var todoListNode = document.createElement('ul');
-  
+      var todoListNode = document.createElement('ul')
       state.forEach(function(todo) {
         todoListNode.appendChild(createTodoNode(todo));
       });
