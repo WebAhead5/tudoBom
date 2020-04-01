@@ -53,28 +53,6 @@
 
     // sort function
 
-    document.getElementById("numBtn").addEventListener('click', function() { 
-      var numSort = function(a, b) {return a.id-b.id}
-      var newState = todoFunctions.sortTodos(state, numSort)
-      update(newState);
-    })
-
-    document.getElementById("alphaBtn").addEventListener('click', function() { 
-      var alphaSort = function(A, B) {
-        let a = A.description.toLowerCase()
-        let b = B.description.toLowerCase()
-        if(a < b ) return -1; 
-        if(a > b ) return 1; 
-        return 0; }
-        var newState = todoFunctions.sortTodos(state, alphaSort)
-        update(newState);
-      })
-
-    document.getElementById("dateBtn").addEventListener('click', function() { 
-        var dateSort = function(a, b) {return a.added - b.added}
-        var newState = todoFunctions.sortTodos(state, dateSort)
-        update(newState);
-        })
 
    
       // add classes for css
@@ -100,6 +78,31 @@
         document.getElementById("todoInput").value = ""
       });
     }
+
+
+
+    document.getElementById("numBtn").addEventListener('click', function() { 
+      var numSort = function(a, b) {return a.id-b.id}
+      var newState = todoFunctions.sortTodos(state, numSort)
+      update(newState);
+    })
+
+    document.getElementById("alphaBtn").addEventListener('click', function() { 
+      var alphaSort = function(A, B) {
+        let a = A.description.toLowerCase()
+        let b = B.description.toLowerCase()
+        if(a < b ) return -1; 
+        if(a > b ) return 1; 
+        return 0; }
+        var newState = todoFunctions.sortTodos(state, alphaSort)
+        update(newState);
+      })
+
+    document.getElementById("dateBtn").addEventListener('click', function() { 
+        var dateSort = function(a, b) {return a.added - b.added}
+        var newState = todoFunctions.sortTodos(state, dateSort)
+        update(newState);
+        })
   
     // you should not need to change this function
     var update = function(newState) {
