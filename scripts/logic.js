@@ -5,7 +5,7 @@ var todoFunctions = {
     // todoFunctions.generateId() will give you a unique id
     // You do not need to understand the implementation of this function.
     generateId: (function() {
-      var idCounter = 0;
+      var idCounter = 3;
       
       function incrementCounter() {
         return (idCounter += 1);
