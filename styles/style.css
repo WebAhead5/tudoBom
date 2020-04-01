@@ -1,3 +1,147 @@
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10vh 70vh 30vh ;
+    grid-template-areas: "header header box"
+                         "left middle right"
+                         "bottom bottom bottom";
+    background: yellow;
+    grid-gap: 10px;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    padding-top: 10px;
+}
+.header{
+    grid-area: header;
+    background: lightgray;
+    border-radius: 10px;
+    box-shadow: 5px 5px black;
+    /* Align block <div> to middle column 
+    justify-self: center;
+    Align block <div> to middle row
+    align-self: center;
+    */
+    overflow:scroll;
+    padding: 10px;
+}
+input{
+   margin: 2px; 
+}
+
+li{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content:space-between;
+    border-radius: 10px;
+    box-shadow: 2px 4px darkgray;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+}
+
+spam {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content:space-around;
+    border-radius: 4px;
+    box-shadow: 4px 4px darkgreen;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid darkgreen;
+    margin-top: 10px;
+}
+
+spam1 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content:space-around;
+    border-radius: 4px;
+    box-shadow: 4px 4px darkred;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid darkred;
+    margin-top: 10px;
+}
+
+ul {
+    list-style-type: circle;
+  padding: 15px;
+}
+
+img{
+    height: 30px;
+    width:30px;
+   
+}
+
+div{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 22px;
+    padding: 5px;
+}
+.box{
+    grid-area: box;
+    background: lightgray;
+    border-radius: 10px;
+    box-shadow: 5px 5px black;
+    height: 100%;
+}
+.left{
+    grid-area: left;
+    background: lightgray;
+    border-radius: 10px;
+    box-shadow: 5px 5px black;
+    height: 70vh;
+    overflow: scroll;
+}
+.middle{
+    grid-area: middle;
+    background: lightgray;
+    border-radius: 10px;
+    box-shadow: 5px 5px black;
+    padding-top: 5%;
+    overflow: scroll;
+}
+.middleA{
+    background: gray;
+    border-radius: 10px;
+    box-shadow: 5px 5px black;
+    height: 45%;
+    width: 80%;
+    margin: auto;
+    overflow: scroll;
+}
+.middleB{
+    background: gray;
+    border-radius: 10px;
+    box-shadow: 5px 5px black;
+    height: 42%;
+    width: 80%;
+    margin: auto;
+    overflow: scroll;
+}
+.right{
+    grid-area: right;
+    background: lightgray;
+    border-radius: 10px;
+    box-shadow: 5px 5px black;
+    height: 70vh;
+    overflow: scroll;
+}
+.bottom{
+    grid-area: bottom;
+    background: lightgray;
+    border-radius: 10px;
+    box-shadow: 5px 5px black;
+}
+
 .notchecked {
     font-weight: 600;
     color: black;

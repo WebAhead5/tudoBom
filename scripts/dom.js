@@ -8,8 +8,8 @@
   
     var state = [
       { id: -3, description: 'first todo', done: false},
-      { id: -2, description: 'second todo', done: false},
-      { id: -1, description: 'third todo', done: false },
+      { id: -2, description: 'second todo', done: true},
+      { id: -1, description: 'third todo', done: true },
     ]; // this is our initial todoList
   
     // This function takes a todo, it returns the DOM node representing that todo
@@ -26,12 +26,17 @@
       else {
         todoSpan.className = "notchecked";
       }
-   
+        
       todoNode.appendChild(todoSpan);
-
+        
+    if (todo.done == true) {
+     document.getElementById("box1").innerHTML += `<spam>${todo.description}</spam>`}else {
+     document.getElementById("box2").innerHTML += `<spam1>${todo.description}</spam1>`
+      }
+       
       // this adds the delete button
-      var deleteButtonNode = document.createElement('button');
-      deleteButtonNode.innerHTML = "X"
+      var deleteButtonNode = document.createElement('img');
+      deleteButtonNode.src = "./imgs/x.png"
       deleteButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.deleteTodo(state, todo.id);
         update(newState);
@@ -40,19 +45,22 @@
   
 
       // add markTodo button
-
       todoSpan.addEventListener('click', function(e) {
         console.log(todo.id, todo.done)
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
       })
+        
+        
 
-    
-   
+        
       // add classes for css
-  
       return todoNode;
+       
+        
     };
+    
+
     // bind create todo form
     if (addTodoForm) {
       addTodoForm.addEventListener('submit', function(event) {
@@ -79,6 +87,8 @@
   
     // you should not need to change this function
     var update = function(newState) {
+      document.getElementById("box1").innerHTML = ``;
+      document.getElementById("box2").innerHTML = ``;
       state = newState;
       renderState(state);
     };
@@ -96,4 +106,7 @@
     };
   
     if (container) renderState(state);
+
+    
+    
   })();
