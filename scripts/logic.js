@@ -28,7 +28,7 @@ var todoFunctions = {
       // add an id to the newTodo. You can use the generateId function to create an id.
       // hint: array.concat
 
-      var newItem = {id: this.generateId, description: newTodo, done: false}
+      var newItem = {id: this.generateId(), description: newTodo, done: false}
       return this.cloneArrayOfObjects(todos).concat(newItem)
     },
   
