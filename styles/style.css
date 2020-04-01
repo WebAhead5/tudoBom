@@ -1,3 +1,10 @@
-#doneButton{
-    background-color: aqua;
+.notchecked {
+    font-weight: 600;
+    color: black;
+}
+
+.checked {
+    color:grey;
+    font-weight: 300;
+    text-decoration: line-through;
 }
