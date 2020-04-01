@@ -65,7 +65,7 @@ test('mark item', function(t) {
   t.equal(actual,expected,"mark Func: status should equal true (change status to original object)")
   var actual1a = todoFunctions.markTodo(state, markID)[0].done;
   var expected1a = true; //func run on 0, 0 changes
-  t.equal(actual1a,expected1a,"mark Func: status should equal true (change status to ture)")
+  t.equal(actual1a,expected1a,"mark Func: status should equal true (change status to true)")
   var actual1 = todoFunctions.markTodo(state, markID)[0].done;
   var expected1 = !state[1].done // func run on 0, 1 stays the same
   t.equal(actual1,expected1,"mark Func: status should equal false (no change to status)")

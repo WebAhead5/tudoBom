@@ -16,9 +16,18 @@
     var createTodoNode = function(todo) {
       var todoNode = document.createElement('li');
       // you will need to use addEventListener
-  
+     //?????????????//
+      
       // add span holding description
+      var todoSpan = document.createElement("SPAN");
+      todoSpan.textContent = todo.description;
+
+      var close = document.createTextNode("  \u00D7  ");
   
+      todoSpan.appendChild(close);
+      todoNode.appendChild(todoSpan);
+   
+
       // this adds the delete button
       var deleteButtonNode = document.createElement('button');
       deleteButtonNode.addEventListener('click', function(event) {
@@ -27,7 +36,13 @@
       });
       todoNode.appendChild(deleteButtonNode);
   
+
+
+
       // add markTodo button
+
+
+
   
       // add classes for css
   
@@ -40,11 +55,12 @@
         // https://developer.mozilla.org/en-US/docs/Web/Events/submit
         // what does event.preventDefault do?
         // what is inside event.target?
+
+        event.preventDefault()
+
+        var description = document.getElementById("todoInput").value
+        var newState =  todoFunctions.addTodo(state, description)
   
-        var description = '?'; // event.target ....
-  
-        // hint: todoFunctions.addTodo
-        var newState = []; // ?? change this!
         update(newState);
       });
     }
