@@ -31,20 +31,26 @@
         update(newState);
       });
       todoNode.appendChild(deleteButtonNode);
-  
-
-
-
+      
       // add markTodo button
-
-
+      var markButtonNode = document.createElement('button');
+      markButtonNode.innerHTML = "Done"
+      markButtonNode.addEventListener('click', function(event) {
+        var newState = todoFunctions.markTodo(state, todo.id);
+        update(newState);
+        
+        // markButtonNode.value = 'complete'
+        // markButtonNode.setAttribute("id", "doneButton")
+        console.log(markButtonNode)
+      });
+      todoNode.appendChild(markButtonNode);
+      
 
   
       // add classes for css
   
       return todoNode;
     };
-  forEach
     // bind create todo form
     if (addTodoForm) {
       addTodoForm.addEventListener('submit', function(event) {
