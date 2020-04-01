@@ -5,9 +5,10 @@ var todoFunctions = require('../scripts/logic');
 
 //TEST VARIBLES
 var state = [
-  { id: -3, description: 'first todo', done: false},
-  { id: -2, description: 'second todo', done: false},
-  { id: -1, description: 'third todo', done: false},
+  { id: -3, description: 'Think of idea for new project', done: false},
+  { id: -2, description: 'Learn Node.js', done: false},
+  { id: -1, description: 'Clean the house', done: false},
+  { id: 0, description: 'Phone Mum', done: false},
 ]; 
 
 var newTodo = {id: 0, description: 'fouth todo', done: false}

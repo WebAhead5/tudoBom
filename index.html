@@ -2,31 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>tdd todo</title>
+    <title>- to do -</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ff96e1ebd9.js" crossorigin="anonymous"></script>
   </head>
   <body class="main">
 
 <div class="header">
    <form id="add-todo">
-      <input id="todoInput" type="text" name="description" placeholder="please add new To Do item" required class="text text-search">
+      <input id="todoInput" type="text" name="description" placeholder="todo...." required class="text text-search">
       
-      <input type="submit" name="" value="Submit" class="btn btn-info">
+      <input type="submit" name="" value="Add New Item" class="btn btn-info">
       
-      <input type="button" id="sort" value="Sort" class="btn btn-info" onClick="sortTasks()">
+
     </form>
 </div>
-<div class="box"> APIs</div>  
+<div class="box">  <img src="" alt="" id="box"></div> 
+
+
 
 <div class="left" id="todo-container">
+
+
       <ul>
       
       </ul>
 </div>
 
 <div class="middle">
-    <b>completed Tasks</b>
+    <b> Completed Tasks</b>
     <div class="middleA" id="box1">  
     </div>
     <br>
@@ -36,13 +42,22 @@
     </div>
 </div>
 
-<div class="right" id="right">Sorted</div>
+<div class="right" id="right"><b>Sort List<b>
 
-<div class="bottom">
-  <img src="" alt="" id="box" style="height: 100%; width:70%;">
+  <div class="sortButtons">
+  <input type="button" id="sort" value="Sort by Date" class="btn btn-info" onClick="sortTasks()">
+  <input type="button" id="sort" value="Sort A-Z" class="btn btn-info" onClick="sortTasks()">
   </div>
+  <div class="sorted" id="sorted"></div>
+  
+  
+</div>
+
+
+<div class="bottom">Copyright @MoradAbed @JakePowis @VoJunSoft 2020</div>
  
   </body>
+  
   <script type="text/javascript" src = "./scripts/logic.js"></script>
   <script type="text/javascript" src = "./scripts/dom.js"></script>
   <script type="text/javascript" src="./scripts/giphy.js"></script>

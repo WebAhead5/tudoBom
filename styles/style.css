@@ -1,32 +1,32 @@
 .main{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 10vh 70vh 30vh ;
+    grid-template-rows: 15vh 80vh 5vh ;
     grid-template-areas: "header header box"
                          "left middle right"
                          "bottom bottom bottom";
-    background: yellow;
+    background:#E3CD81FF;
     grid-gap: 10px;
-    width: 80%;
+    width: 70%;
     height: 100%;
     margin: auto;
     padding-top: 10px;
+    font-family: 'Sen', sans-serif;
 }
 .header{
     grid-area: header;
-    background: lightgray;
+    background: rgba(209, 211, 211, 0.781);
     border-radius: 10px;
-    box-shadow: 5px 5px black;
-    /* Align block <div> to middle column 
-    justify-self: center;
-    Align block <div> to middle row
-    align-self: center;
-    */
-    overflow:scroll;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.459);
+    height: 100%;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 input{
-   margin: 2px; 
+  
 }
 
 li{
@@ -35,10 +35,14 @@ li{
     flex-direction: row;
     justify-content:space-between;
     border-radius: 10px;
-    box-shadow: 2px 4px darkgray;
-    text-align: center;
+    box-shadow: 5px 4px 4px darkgray;
+    border: solid rgba(128, 128, 128, 0.342) 2px;
+    text-align: left;
     cursor: pointer;
     padding: 5px;
+    margin: 4%;
+    background-color: rgba(231, 231, 231, 0.904);
+
 }
 
 spam {
@@ -47,12 +51,15 @@ spam {
     flex-direction: row;
     justify-content:space-around;
     border-radius: 4px;
-    box-shadow: 4px 4px darkgreen;
+    box-shadow: 4px 4px 5px darkgreen;
     text-align: center;
     cursor: pointer;
     width: 100%;
     border: 1px solid darkgreen;
     margin-top: 10px;
+    padding: 5px;
+    background-color: rgba(231, 231, 231, 0.904);
+
 }
 
 spam1 {
@@ -61,12 +68,14 @@ spam1 {
     flex-direction: row;
     justify-content:space-around;
     border-radius: 4px;
-    box-shadow: 4px 4px darkred;
+    box-shadow: 4px 4px 5px darkred;
     text-align: center;
     cursor: pointer;
     width: 100%;
     border: 1px solid darkred;
     margin-top: 10px;
+    padding: 5px;
+    background-color: rgba(231, 231, 231, 0.904);
 }
 
 ul {
@@ -80,6 +89,23 @@ img{
    
 }
 
+#todoInput {
+
+    border: solid 2px #17a2b8;
+    height: 40px;
+    /* width: 55%; */
+}
+
+#box {
+    height: inherit;
+    width:inherit;
+    object-fit: contain;
+    border-radius: 10px;
+    background: rgba(177, 179, 179, 0.781);
+    border: solid 4px #17a2b8;
+
+}
+
 div{
     text-align: center;
     vertical-align: middle;
@@ -88,62 +114,85 @@ div{
 }
 .box{
     grid-area: box;
-    background: lightgray;
+    background: rgba(209, 211, 211, 0.781);
     border-radius: 10px;
-    box-shadow: 5px 5px black;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.459);
     height: 100%;
 }
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #17a2b8;
+}
+
 .left{
     grid-area: left;
-    background: lightgray;
+    background:rgba(209, 211, 211, 0.781);
     border-radius: 10px;
-    box-shadow: 5px 5px black;
-    height: 70vh;
-    overflow: scroll;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.459);
+    height: 80vh;
+    overflow: auto;
 }
 .middle{
     grid-area: middle;
-    background: lightgray;
+    background: rgba(209, 211, 211, 0.781);
     border-radius: 10px;
-    box-shadow: 5px 5px black;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.459);
     padding-top: 5%;
-    overflow: scroll;
+    overflow: auto;
+    height: 80vh;
 }
 .middleA{
-    background: gray;
+    background: rgba(211, 211, 211, 0.746);
     border-radius: 10px;
-    box-shadow: 5px 5px black;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.459);
     height: 45%;
     width: 80%;
     margin: auto;
-    overflow: scroll;
+    overflow: auto;
 }
 .middleB{
-    background: gray;
+    background: rgba(211, 211, 211, 0.746);
     border-radius: 10px;
-    box-shadow: 5px 5px black;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.459);
     height: 42%;
     width: 80%;
     margin: auto;
-    overflow: scroll;
+    overflow: auto;
+
+}
+
+.sorted{
+    background: rgba(211, 211, 211, 0.746);
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.459);
+    height: 70%;
+    width: 80%;
+    margin: auto;
+    overflow: auto;
+
 }
 .right{
     grid-area: right;
-    background: lightgray;
+    background: rgba(209, 211, 211, 0.781);
     border-radius: 10px;
-    box-shadow: 5px 5px black;
-    height: 70vh;
-    overflow: scroll;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.459);
+    height: 80vh;
+    overflow: auto;
+ 
 }
 .bottom{
     grid-area: bottom;
-    background: lightgray;
+    background: rgba(209, 211, 211, 0.781);
     border-radius: 10px;
-    box-shadow: 5px 5px black;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.459);
 }
 
 .notchecked {
-    font-weight: 600;
+    font-weight: 500;
     color: black;
 }
 
@@ -152,3 +201,21 @@ div{
     font-weight: 300;
     text-decoration: line-through;
 }
+
+
+
+@media only screen and (max-width: 1200px) {
+
+    main {
+        background-color: blue;
+        width: 80%;
+    }
+  }
+
+@media only screen and (max-width: 600px) {
+
+    main {
+        width: 90%;
+    }
+  }
+

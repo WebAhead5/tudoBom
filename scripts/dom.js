@@ -7,11 +7,14 @@
     var addTodoForm = document.getElementById('add-todo');
   
     var state = [
-      { id: -3, description: 'first todo', done: false},
-      { id: -2, description: 'second todo', done: true},
-      { id: -1, description: 'third todo', done: true },
-    ]; // this is our initial todoList
-  
+      { id: -3, description: 'Morning Cofee', done: true},
+      { id: -2, description: 'Learn Node.js', done: false},
+      { id: -1, description: 'Clean the house', done: false},
+      { id: 0, description: 'Phone Mum', done: false},
+      { id: 1, description: 'Wake up in time for Class', done: true},
+      { id: 2, description: 'Self Isolate', done: true},
+      { id: 3, description: 'Master coding', done: false},
+    ];
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
       var todoNode = document.createElement('li');
@@ -35,8 +38,8 @@
       }
        
       // this adds the delete button
-      var deleteButtonNode = document.createElement('img');
-      deleteButtonNode.src = "./imgs/x.png"
+      var deleteButtonNode = document.createElement('icon');
+      deleteButtonNode.innerHTML = '<i class="fas fa-times-circle icon"></i>'
       deleteButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.deleteTodo(state, todo.id);
         update(newState);
@@ -45,7 +48,7 @@
   
 
       // add markTodo button
-      todoSpan.addEventListener('click', function(e) {
+      todoSpan.parentNode.addEventListener('click', function(e) {
         console.log(todo.id, todo.done)
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
