@@ -3,19 +3,43 @@
   <head>
     <meta charset="utf-8">
     <title>tdd todo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/style.css">
   </head>
-  <body>
+  <body class="main">
 
-    <form id="add-todo">
-      <input id="todoInput"type="text" name="description" placeholder="please add new To Do item" required>
-      <input type="submit" name="" value="Submit">
+<div class="header">
+   <form id="add-todo">
+      <input id="todoInput" type="text" name="description" placeholder="please add new To Do item" required class="text text-search">
+      
+      <input type="submit" name="" value="Submit" class="btn btn-info">
+      
+      <input type="button" id="sort" value="Sort" class="btn btn-info" onClick="sortTasks()">
     </form>
+</div>
+<div class="box"> APIs</div>  
 
-    <div id = "todo-container">
+<div class="left" id="todo-container">
       <ul>
+      
       </ul>
-  </div>
+</div>
+
+<div class="middle">
+    <b>completed Tasks</b>
+    <div class="middleA" id="box1">  
+    </div>
+    <br>
+    <b>Incompleted Tasks</b>
+    <div class="middleB" id="box2">
+        
+    </div>
+</div>
+
+<div class="right" id="right">Sorted</div>
+
+<div class="bottom"> GiF </div>
+ 
   </body>
   <script type="text/javascript" src = "./scripts/logic.js"></script>
   <script type="text/javascript" src = "./scripts/dom.js"></script>
