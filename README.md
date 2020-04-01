@@ -27,21 +27,20 @@ We also added the ability to sort the list via a drop down in both date and alph
 
 On this task, we all worked together on one shared screen, taking on the tasks oin the following order: 
 
-<span style="font-size: 30px">
 
-##    Tests
-
-![](http://files.softicons.com/download/system-icons/ikons-icons-by-studiotwentyeight/png/128/Down.png)
-
-##    Logic
+##    -- Tests --
 
 ![](http://files.softicons.com/download/system-icons/ikons-icons-by-studiotwentyeight/png/128/Down.png)
 
-##    DOM
+##   -- Logic --
 
 ![](http://files.softicons.com/download/system-icons/ikons-icons-by-studiotwentyeight/png/128/Down.png)
 
-##    HTML & CSS
+##    -- DOM --
+
+![](http://files.softicons.com/download/system-icons/ikons-icons-by-studiotwentyeight/png/128/Down.png)
+
+##    -- HTML & CSS --
 
 
 ![](http://files.softicons.com/download/system-icons/ikons-icons-by-studiotwentyeight/png/128/Down.png)
@@ -52,13 +51,16 @@ On this task, we all worked together on one shared screen, taking on the tasks o
 
 # Issues
 
-- Effective tests.
-- Understanding someone elses code.
-- Working within the IFFE & the render function.
+This task taught us alot about the following things :star2:
+
+- Effective testing;
+- Understanding someone elses code;
+- Working within the IFFE & the render function;
 - Working accross multiple files.
 
 
-### Thank YOU!
+
+# Thank YOU!
 
 
 ![text](https://media0.giphy.com/media/23kXnyr4V92NPKdKMX/giphy.gif)
