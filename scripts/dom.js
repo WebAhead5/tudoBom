@@ -1,5 +1,5 @@
 // part 2 linking it all together
-// The function here is called an iife,
+// The function here is called an iife [immediately Invoked Function Expression]
 // it keeps everything inside hidden from the rest of our application
 (function() {
     // This is the dom node where we will keep our todo
@@ -15,7 +15,6 @@
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
       var todoNode = document.createElement('li');
-
 
       // add span holding description
       var todoSpan = document.createElement("SPAN");
@@ -37,7 +36,7 @@
        
       // this adds the delete button
       var deleteButtonNode = document.createElement('img');
-      deleteButtonNode.src = "../imgs/x.png"
+      deleteButtonNode.src = "./imgs/x.png"
       deleteButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.deleteTodo(state, todo.id);
         update(newState);
@@ -70,13 +69,20 @@
         // what is inside event.target?
 
         event.preventDefault()
-
         var description = document.getElementById("todoInput").value
         var newState =  todoFunctions.addTodo(state, description)
   
         update(newState);
         document.getElementById("todoInput").value = ""
       });
+    }
+    {
+    var sortButton = document.querySelector("sortButton");
+    if(sortButton){
+      sortButton.addEventListener('click', function(e) {
+        e = todoFunctions.sortTodos
+      })
+    }
     }
   
     // you should not need to change this function

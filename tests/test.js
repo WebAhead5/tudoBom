@@ -29,6 +29,29 @@ test('Example test', function(t) {
   t.end();
 });
 
+////current
+test('generateId Tests', function(t){
+  var actual = typeof(todoFunctions .generateId())
+  var expected = 'number'
+  t.equal(actual, expected, "It's a number!")
+  t.end();
+})
+
+// test('cloneArrayOfObjects Tests', function(t){
+//   var actual = todoFunctions.cloneArrayOfObjects();
+//   var expected = [{df:"fd"},{rg:"eef"}];
+//   t.equal(actual, expected, "yup")
+//   t.end();
+// })
+
+
+// test('addTodo Tests', function(t){
+//   var actual = (todoFunctions.addTodo()).length;
+//   var expected = todoFunctions.cloneArrayOfObjects(state).length + 1;
+//   t.equal(actual, expected, "New ToDo was added!")
+//   t.equal(typeof(todoFunctions.cloneArrayOfObjects(state)), "Object", "returns a object")
+// })
+////////incoming
 test('add to do test', function(t) {
   // t.pass();
   var actual = (todoFunctions.addTodo(state, newTodo)).length
@@ -73,8 +96,7 @@ test('mark item', function(t) {
   var expected2 = "object";
   t.equal(typeof(actual2), expected2, "Mark Func: should equal object")
   t.end();
-})
-
+});
 
 // test('sort items', function(t) {
 //   // t.pass();
