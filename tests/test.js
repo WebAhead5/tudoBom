@@ -101,11 +101,7 @@ test('mark item', function(t) {
 // test('sort items', function(t) {
 //   // t.pass();
 //   var actual = 
-<<<<<<< HEAD
-//   var expected = 
-=======
 //   var expected = state[0].id > state[1].id
->>>>>>> e73389a61ca5436ea0bbbbbe7c8c8a59f0511443
 //   t.equal(actual,expected,"")
   
 //   var actual1 = todoFunctions.sortTodo(state, sortFunc)

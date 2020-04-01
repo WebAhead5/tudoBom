@@ -1,5 +1,5 @@
 // part 2 linking it all together
-// The function here is called an iife,
+// The function here is called an iife [immediately Invoked Function Expression]
 // it keeps everything inside hidden from the rest of our application
 (function() {
     // This is the dom node where we will keep our todo
@@ -18,7 +18,10 @@
       // you will need to use addEventListener
   
       // add span holding description
-  
+  var todoSpan = document.createElement("SPAN");
+  todoSpan.textContent = todo.description
+  todoNode.appendChild(todoSpan);
+  return todoNode
       // this adds the delete button
       var deleteButtonNode = document.createElement('button');
       deleteButtonNode.addEventListener('click', function(event) {
@@ -33,7 +36,7 @@
   
       return todoNode;
     };
-  
+  forEach
     // bind create todo form
     if (addTodoForm) {
       addTodoForm.addEventListener('submit', function(event) {
