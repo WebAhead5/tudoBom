@@ -56,7 +56,10 @@ test('add to do test', function(t) {
   // t.pass();
   var actual = (todoFunctions.addTodo(state, newTodo)).length
   var expected = (todoFunctions.cloneArrayOfObjects(state)).length + 1
-  t.equal(actual, expected, "Add Func: length should be equal")
+  t.equal(actual, expected, "Add Func: length should be equal to original +1")
+  var actual1a = (todoFunctions.addTodo(state, newTodo)).slice(-1)[0].id
+  var expected1a = state.slice(-1)[0].id +1
+  t.equal(actual1a, expected1a, "Add Func: last ID in array should be previous number +1")
   var actual1 = todoFunctions.addTodo(state, newTodo)
   var expected2 = "object";
   t.equal(typeof(actual1), expected2, "Add Func: should equal object")
@@ -70,7 +73,7 @@ test('delete to do test', function(t) {
   // t.pass();
   var actual = (todoFunctions.deleteTodo(state, obId)).length
   var expected = (todoFunctions.cloneArrayOfObjects(state)).length - 1
-  t.equal(actual, expected, "Delete Func: length should be equal")
+  t.equal(actual, expected, "Delete Func: length should be equal to original minus 1")
   var actual1 = todoFunctions.deleteTodo(state, newTodo)
   var expected2 = "object";
   t.equal(typeof(actual1), expected2, "Delete Func: should equal object")
@@ -81,19 +84,28 @@ test('delete to do test', function(t) {
 test('mark item', function(t) {
   // t.pass();
   var actual = todoFunctions.markTodo(state, markID)[0].done;
-  var expected = state[0].done
-  t.equal(actual,expected,"mark Func: status should equal true")
-  
-  var actual1 = todoFunctions.markTodo(state, markID)
+  var expected = !state[0].done //func run on 0, 0 changes
+  t.equal(actual,expected,"mark Func: status should equal true (change status to original object)")
+  var actual1a = todoFunctions.markTodo(state, markID)[0].done;
+  var expected1a = true; //func run on 0, 0 changes
+  t.equal(actual1a,expected1a,"mark Func: status should equal true (change status to ture)")
+  var actual1 = todoFunctions.markTodo(state, markID)[0].done;
+  var expected1 = !state[1].done // func run on 0, 1 stays the same
+  t.equal(actual1,expected1,"mark Func: status should equal false (no change to status)")
+  var actual2 = todoFunctions.markTodo(state, markID)
   var expected2 = "object";
-  t.equal(typeof(actual1), expected2, "Mark Func: should equal object")
+  t.equal(typeof(actual2), expected2, "Mark Func: should equal object")
   t.end();
 });
 
 // test('sort items', function(t) {
 //   // t.pass();
 //   var actual = 
+<<<<<<< HEAD
 //   var expected = 
+=======
+//   var expected = state[0].id > state[1].id
+>>>>>>> e73389a61ca5436ea0bbbbbe7c8c8a59f0511443
 //   t.equal(actual,expected,"")
   
 //   var actual1 = todoFunctions.sortTodo(state, sortFunc)
