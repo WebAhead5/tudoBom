@@ -78,6 +78,22 @@ spam1 {
     background-color: rgba(231, 231, 231, 0.904);
 }
 
+spam3 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content:space-around;
+    border-radius: 4px;
+    box-shadow: 5px 4px 4px darkgray;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid #17a2b8;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: rgba(231, 231, 231, 0.904);
+}
+
 ul {
     list-style-type: circle;
   padding: 15px;
@@ -93,7 +109,7 @@ img{
 
     border: solid 2px #17a2b8;
     height: 40px;
-    /* width: 55%; */
+    width: 55%;
 }
 
 #box {
@@ -126,6 +142,12 @@ div{
     justify-content: center;
     font-size: 30px;
     color: #17a2b8;
+    transition: 0.5s;
+}
+
+.icon:hover {
+   
+    color: #1b626d;
 }
 
 .left{

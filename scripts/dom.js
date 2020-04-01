@@ -7,13 +7,13 @@
     var addTodoForm = document.getElementById('add-todo');
   
     var state = [
-      { id: -3, description: 'Morning Cofee', done: true},
-      { id: -2, description: 'Learn Node.js', done: false},
-      { id: -1, description: 'Clean the house', done: false},
-      { id: 0, description: 'Phone Mum', done: false},
-      { id: 1, description: 'Wake up in time for Class', done: true},
-      { id: 2, description: 'Self Isolate', done: true},
-      { id: 3, description: 'Master coding', done: false},
+      { id: 1, description: 'Morning Cofee', done: true},
+      { id: 2, description: 'Learn Node.js', done: false},
+      { id: 3, description: 'Clean the house', done: false},
+      { id: 4, description: 'Phone Mum', done: false},
+      { id: 5, description: 'Wake up in time for Class', done: true},
+      { id: 6, description: 'Self Isolate', done: true},
+      { id: 7, description: 'Master coding', done: false},
     ];
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
@@ -36,6 +36,9 @@
      document.getElementById("box1").innerHTML += `<spam>${todo.description}</spam>`}else {
      document.getElementById("box2").innerHTML += `<spam1>${todo.description}</spam1>`
       }
+
+
+      
        
       // this adds the delete button
       var deleteButtonNode = document.createElement('icon');
@@ -54,12 +57,8 @@
         update(newState);
       })
         
-        
-
-        
       // add classes for css
       return todoNode;
-       
         
     };
     
@@ -79,15 +78,44 @@
         document.getElementById("todoInput").value = ""
       });
     }
-    {
-    var sortButton = document.querySelector("sortButton");
-    if(sortButton){
-      sortButton.addEventListener('click', function(e) {
-        e = todoFunctions.sortTodos
-      })
-    }
-    }
+
+
+    document.getElementById("numBtn").addEventListener('click', function() { 
+      var numSort = function(a, b) {return a.id-b.id}
+      sortedArr = todoFunctions.sortTodos(state, numSort)
+      printSort(sortedArr)
+    })
   
+    document.getElementById("alphaBtn").addEventListener('click', function() { 
+      var alphaSort = function(A, B) {
+        let a = A.description.toLowerCase()
+        let b = B.description.toLowerCase()
+        if(a < b ) return -1; 
+        if(a > b ) return 1; 
+        return 0; }
+        sortedArr = todoFunctions.sortTodos(state, alphaSort)
+        printSort(sortedArr)
+      })
+  
+    // document.getElementById("dateBtn").addEventListener('click', function() { 
+    //     var dateSort = function(a, b) {return a.added - b.added}
+    //     var newState = todoFunctions.sortTodos(state, dateSort)
+    //     update(newState);
+    //     })
+  
+  
+    function printSort(arr) {
+
+      document.getElementById("sorted").innerHTML = ""
+      arr.forEach( x => {
+
+        document.getElementById("sorted").innerHTML += `<spam3>#${x.id} Task: ${x.description}</spam3>`
+
+      })
+
+    }
+
+
     // you should not need to change this function
     var update = function(newState) {
       document.getElementById("box1").innerHTML = ``;
