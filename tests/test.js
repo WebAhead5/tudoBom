@@ -5,17 +5,19 @@ var todoFunctions = require('../scripts/logic');
 
 //TEST VARIBLES
 var state = [
-  { id: -3, description: 'Think of idea for new project', done: false},
-  { id: -2, description: 'Learn Node.js', done: false},
-  { id: -1, description: 'Clean the house', done: false},
-  { id: 0, description: 'Phone Mum', done: false},
-]; 
+  { id: 1, description: 'Morning Cofee', done: true},
+  { id: 2, description: 'Learn Node.js', done: false},
+  { id: 3, description: 'Clean the house', done: false},
+  { id: 4, description: 'Phone Mum', done: false},
+  { id: 5, description: 'Wake up in time for Class', done: true},
+  { id: 6, description: 'Self Isolate', done: true},
+  { id: 7, description: 'Master coding', done: false},
+];
 
-var newTodo = {id: 0, description: 'fouth todo', done: false}
-var obId = -2;
-var markID = -3
+var newTodo = "new task to add"
+var obId = 2;
+var markID = 4
 
-var sortFunc = ""
 
 
 // this is our initial todoList
@@ -58,8 +60,8 @@ test('add to do test', function(t) {
   var actual = (todoFunctions.addTodo(state, newTodo)).length
   var expected = (todoFunctions.cloneArrayOfObjects(state)).length + 1
   t.equal(actual, expected, "Add Func: length should be equal to original +1")
-  var actual1a = (todoFunctions.addTodo(state, newTodo)).slice(-1)[0].id
-  var expected1a = state.slice(-1)[0].id +1
+  var actual1a = (todoFunctions.addTodo(state, newTodo)).slice(-1)[0].id // TEST FAILING - returning 10!?
+  var expected1a = state.slice(-1)[0].id +1 // expect 8 (7 + 1)
   t.equal(actual1a, expected1a, "Add Func: last ID in array should be previous number +1")
   var actual1 = todoFunctions.addTodo(state, newTodo)
   var expected2 = "object";
@@ -84,10 +86,10 @@ test('delete to do test', function(t) {
 
 test('mark item', function(t) {
   // t.pass();
-  var actual = todoFunctions.markTodo(state, markID)[0].done;
-  var expected = !state[0].done //func run on 0, 0 changes
+  var actual = todoFunctions.markTodo(state, markID)[3].done;
+  var expected = !state[3].done //func run on 0, 0 changes
   t.equal(actual,expected,"mark Func: status should equal true (change status to original object)")
-  var actual1a = todoFunctions.markTodo(state, markID)[0].done;
+  var actual1a = todoFunctions.markTodo(state, markID)[3].done;
   var expected1a = true; //func run on 0, 0 changes
   t.equal(actual1a,expected1a,"mark Func: status should equal true (change status to true)")
   var actual1 = todoFunctions.markTodo(state, markID)[0].done;
