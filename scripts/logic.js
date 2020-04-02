@@ -37,10 +37,6 @@ var todoFunctions = {
       // return a new array, this should not contain any todo with an id of idToDelete
       // hint: array.filter
       
-
-
-
-
       return this.cloneArrayOfObjects(todos).filter(x => x.id !== idToDelete)
       
     },
@@ -51,12 +47,9 @@ var todoFunctions = {
       // this element will have its done value toggled
       // hint: array.map
       return this.cloneArrayOfObjects(todos).map(x => {
-          if (x.id == idToMark && x.done == true){
-              x.done = false}
-            else if (x.id == idToMark && x.done == false){ 
-              x.done = true }
-
-            return x;
+          if (x.id == idToMark) x.done = !x.done ;
+          
+          return x
           })
     },
 

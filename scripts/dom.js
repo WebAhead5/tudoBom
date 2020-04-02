@@ -16,6 +16,9 @@
       { id: 6, description: 'Self Isolate', done: true},
       { id: 7, description: 'Master coding', done: false},
     ];
+
+    // CREATE NODES & SPANS ################################################
+    
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
       var todoNode = document.createElement('li');
@@ -34,17 +37,9 @@
       }
         
       todoNode.appendChild(todoSpan);
-        
 
-                      /******************************* */
-      //This code has the same condition as the previous if statement, combined the two - Morad.
-      // if (todo.done == true) {
-    //  document.getElementById("box1").innerHTML += `<spam>${todo.description}</spam>`}else {
-    //  document.getElementById("box2").innerHTML += `<spam1>${todo.description}</spam1>`
-    //   }
-                      /******************************* */
 
-      
+      // DELETE BUTTON ################################################
        
       // this adds the delete button
       var deleteButtonNode = document.createElement('icon');
@@ -65,6 +60,8 @@
       todoNode.appendChild(deleteButtonNode);
   
 
+      // MARK TODO FUNC ############################################
+
       // add markTodo button
       todoSpan.parentNode.addEventListener('click', function(e) {
         console.log(todo.id, todo.done)
@@ -72,13 +69,11 @@
         update(newState);
       })
         
-      // add classes for css
-      return todoNode;
-        
+      return todoNode; 
     };
     
 
-    // bind create todo form
+    // ADD TODO FUNCTION ###############################################
     if (addTodoForm) {
       addTodoForm.addEventListener('submit', function(event) {
         // https://developer.mozilla.org/en-US/docs/Web/Events/submit
@@ -94,12 +89,12 @@
       });
     }
 
+    // SORT FUNCTIONS ####################################################
 
     document.getElementById("numBtn").addEventListener('click', function() { 
       var numSort = function(a, b) {return a.id-b.id}
       sortedArr = todoFunctions.sortTodos(state, numSort)
       savedSort = sortedArr;
-      console.log("SAVING LAST SORT", savedSort)
       printSort(sortedArr)
     })
   
@@ -113,7 +108,6 @@
       }
         sortedArr = todoFunctions.sortTodos(state, alphaSort)
         savedSort = sortedArr;
-        console.log("SAVING LAST SORT", savedSort)
         printSort(sortedArr)
       })
   
@@ -133,6 +127,7 @@
 
     }
 
+    // DEFAULT CODE ####################################################
 
     // you should not need to change this function
     var update = function(newState) {
