@@ -74,6 +74,29 @@ test('add to do test', function(t) {
   t.end();
 })
 
+// test('unique id num', function(t){
+//   var mf = 1;
+//   var m = 0;
+//   var item;
+//   var actual = function checkUnique() {
+//     for( let i = 1; i <= state.length; i++){
+//       // state[i].id != state[i-1].id
+//       for(var j=0; j<state.length; j++){
+//         if(state[i].id == state[j].id)
+//         m++;
+//         if (mf<m){
+//           mf = m ;
+//           item = state[i].id;
+//         }
+//       }
+//       m=0;
+//   }
+//   return mf;
+// }
+// var expected = "1";
+// t.equal(actual, expected, "The max occurence should be 1")
+// t.end()
+// })
 
 test('delete to do test', function(t) {
   // t.pass();
