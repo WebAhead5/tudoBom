@@ -41,12 +41,6 @@ var todoFunctions = {
       
     },
     
-    displayComplete: function(todos) {
-
-      return this.cloneArrayOfObjects(todos).filter(x => x.done === true);
-      
-    },
-    
     markTodo: function(todos, idToMark) {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
       // in the new todo array, all elements will remain unchanged except the one with id: idToMark
