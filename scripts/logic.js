@@ -5,7 +5,7 @@ var todoFunctions = {
     // todoFunctions.generateId() will give you a unique id
     // You do not need to understand the implementation of this function.
     generateId: (function() {
-      var idCounter = 0;
+      var idCounter = 7;
       
       function incrementCounter() {
         return (idCounter += 1);
@@ -39,8 +39,8 @@ var todoFunctions = {
 
       return this.cloneArrayOfObjects(todos).filter(x => x.id !== idToDelete)
       
-  
     },
+    
     markTodo: function(todos, idToMark) {
       // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
       // in the new todo array, all elements will remain unchanged except the one with id: idToMark
@@ -61,6 +61,9 @@ var todoFunctions = {
       // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
       // sortFunction will have same signature as the sort function in array.sort
       // hint: array.slice, array.sort
+
+      return this.cloneArrayOfObjects(todos).sort(sortFunction)
+
     },
   };
   

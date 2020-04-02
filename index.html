@@ -1,21 +1,63 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>tdd todo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>- to do -</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ff96e1ebd9.js" crossorigin="anonymous"></script>
   </head>
-  <body>
-    <div id = "todo-container">
-        <ul>
-        </ul>
+  <body class="main">
+<br>
+<div class="header">
+   <form id="add-todo">
+      <input id="todoInput" type="text" name="description" placeholder="tudo...." required class="txt txt-memo" style="width:30vw;">
+      
+      <input type="submit" name="" value="Add New Item" class="btn btn-info">
+ </form>
+</div>
+<div class="box">  <img src="" alt="" id="box"></div> 
+
+
+
+<div class="left" id="todo-container">
+
+
+      <ul>
+      
+      </ul>
+</div>
+
+<div class="middle">
+    <b> Completed Tasks</b>
+    <div class="middleA" id="box1">  
     </div>
-    <form id="add-todo">
-      <!-- <input id="todoInput"type="text" name="description" value="test"> -->
-      <input id="todoInput"type="text" name="description" placeholder="Insert your ToDo description">
-      <input type="submit" name="" value="Submit">
-    </form>
+    <br>
+    <b>Incompleted Tasks</b>
+    <div class="middleB" id="box2">
+        
+    </div>
+</div>
+
+<div class="right" id="right"><b>Sort List</b>
+
+  <div class="sortButtons">
+  <input type="button" id="numBtn" value="Sort by #" class="btn btn-info">
+  <input type="button" id="alphaBtn" value="Sort A-Z" class="btn btn-info">
+  </div>
+  <div class="sorted" id="sorted"></div>
+  
+  
+</div>
+
+
+<div class="bottom">Copyright @MoradAbed @JakePowis @VoJunSoft 2020</div>
+ 
   </body>
+  
   <script type="text/javascript" src = "./scripts/logic.js"></script>
   <script type="text/javascript" src = "./scripts/dom.js"></script>
+  <script type="text/javascript" src="./scripts/giphy.js"></script>
 </html>
