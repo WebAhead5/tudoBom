@@ -5,6 +5,7 @@
     // This is the dom node where we will keep our todo
     var container = document.getElementById('todo-container');
     var addTodoForm = document.getElementById('add-todo');
+    var savedSort = []
   
     var state = [
       { id: 1, description: 'Morning Cofee', done: true},
@@ -51,6 +52,15 @@
       deleteButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.deleteTodo(state, todo.id);
         update(newState);
+        console.log("del button clicked")
+
+        var updateSort = savedSort.filter(x => {
+          console.log("current id", x.id, "id to delete", todo.id)
+          return x.id !== todo.id;
+        })
+        savedSort = updateSort;
+        printSort(updateSort)
+
       });
       todoNode.appendChild(deleteButtonNode);
   
@@ -88,6 +98,8 @@
     document.getElementById("numBtn").addEventListener('click', function() { 
       var numSort = function(a, b) {return a.id-b.id}
       sortedArr = todoFunctions.sortTodos(state, numSort)
+      savedSort = sortedArr;
+      console.log("SAVING LAST SORT", savedSort)
       printSort(sortedArr)
     })
   
@@ -100,6 +112,8 @@
                0
       }
         sortedArr = todoFunctions.sortTodos(state, alphaSort)
+        savedSort = sortedArr;
+        console.log("SAVING LAST SORT", savedSort)
         printSort(sortedArr)
       })
   
