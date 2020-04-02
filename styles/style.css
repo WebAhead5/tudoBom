@@ -228,16 +228,43 @@ div{
 
 @media only screen and (max-width: 1200px) {
 
-    main {
-        background-color: blue;
-        width: 80%;
+    .main {
+        width: 85%;
+        font-size: 16px;
     }
   }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 680px) {
 
-    main {
-        width: 90%;
+    .main {
+        width: 98%;
+        font-size: 12px;
+    }
+
+    .icon {font-size: 22px;}
+
+    .btn {
+        font-size: 12px;
+    }
+
+    #todoInput {
+        height: 32px;
+    }
+
+    ul {
+        padding: 4px;
+    }
+
+    .middleA {
+        width: 90%
+    }
+
+    .middleB {
+        width: 90%
+    }
+
+    .sorted {
+        width: 90%
     }
   }
 
