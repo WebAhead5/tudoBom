@@ -25,7 +25,7 @@ var numSort = function(a, b) {return a.id-b.id}
 
 
 //#####################################################################
-
+//EXAMPLE TEST
 
 test('Example test', function(t) {
   // t.pass();
@@ -35,44 +35,81 @@ test('Example test', function(t) {
   t.end();
 });
 
+//#####################################################################
+//GENRATE ID TESTS
+
+
+//Testing that ID that is generated is a number
 test('generateId Tests', function(t){
   var actual = typeof(todoFunctions.generateId()) // id moves from 7 to 8
   var expected = 'number'
   t.equal(actual, expected, "It's a number!")
+  t.end();
+})
+
+//Testing that ID increments by 1 when it is generated
+test('generateId Tests', function(t){
   var actual = todoFunctions.generateId() //id moves from 8 to 9
   var expected = 9;
   t.equal(actual, expected, "ID has incremented by 1 ")
   t.end();
 })
 
+//#####################################################################
+//CLONE ARRAY TESTS
+
+
+//Testing that the cloned object and original object are not the same object
 test('cloneArrayOfObjects Tests', function(t){
   var actual = todoFunctions.cloneArrayOfObjects(state);
   var expected = state
   t.notEqual(actual, expected, "cloned object not the same as original object")
-  var actual2 = todoFunctions.cloneArrayOfObjects(state);
-  var expected2 = state
-  t.deepEqual(actual2, expected2, "cloned object to equal original object in contents")
   t.end();
 })
 
+//Testing that even though the object is a clone, the values are the same as the original object
+test('cloneArrayOfObjects Tests', function(t){
+  var actual = todoFunctions.cloneArrayOfObjects(state);
+  var expected = state
+  t.deepEqual(actual, expected, "cloned object to equal original object in contents")
+  t.end();
+})
 
+//#####################################################################
+//ADD TO DO TESTS
 
+//Testing that new object has +1 item than original item after add new item is run
 test('add to do test', function(t) {
-  // t.pass();
   var actual = (todoFunctions.addTodo(state, newTodo)).length //id moves from 9 to 10
   var expected = (todoFunctions.cloneArrayOfObjects(state)).length + 1
   t.equal(actual, expected, "Add Func: length should be equal to original +1")
-  var actual1a = (todoFunctions.addTodo(state, newTodo)).slice(-1)[0].id 
-  var expected1a = state.slice(-1)[0].id +4 //id moves from 10 to 11 (original 7 plus 4 calls)
-  t.equal(actual1a, expected1a, "Add Func: last ID in array should be previous number +1")
-  var actual1 = todoFunctions.addTodo(state, newTodo)
-  var expected2 = "object";
-  t.equal(typeof(actual1), expected2, "Add Func: type should equal object (not equal)")
-  var actual3 = todoFunctions.addTodo(state, newTodo);
-  var expected3 = state
-  t.notEqual(actual3, expected3, "Add Func: cloned object not the same as original object (is deep equal)")
   t.end();
 })
+
+//Testing that ID increments by 1 when new Object is created
+test('add to do test', function(t) {
+  var actual = (todoFunctions.addTodo(state, newTodo)).slice(-1)[0].id 
+  var expected = state.slice(-1)[0].id +4 //id moves from 10 to 11 (original 7 plus 4 calls)
+  t.equal(actual, expected, "Add Func: last ID in array should be previous number +1")
+  t.end();
+})
+
+//Testing that function returns an object
+test('add to do test', function(t) {
+  var actual = todoFunctions.addTodo(state, newTodo)
+  var expected = "object";
+  t.equal(typeof(actual), expected, "Add Func: type should equal object (not equal)")
+  t.end();
+})
+
+//Testing that the cloned object and original object are not the same object
+test('add to do test', function(t) {
+  var actual = todoFunctions.addTodo(state, newTodo);
+  var expected = state
+  t.notEqual(actual, expected, "Add Func: cloned object not the same as original object (is not equal)")
+  t.end();
+})
+
 
 // test('unique id num', function(t){
 //   var mf = 1;
@@ -98,58 +135,129 @@ test('add to do test', function(t) {
 // t.end()
 // })
 
+//#####################################################################
+//DELETE TO DO TESTS
+
+
+//Testing that new object is -1 shorter than original object
 test('delete to do test', function(t) {
-  // t.pass();
   var actual = (todoFunctions.deleteTodo(state, obId)).length
   var expected = (todoFunctions.cloneArrayOfObjects(state)).length - 1
   t.equal(actual, expected, "Delete Func: length should be equal to original minus 1")
-  var actual1 = todoFunctions.deleteTodo(state, newTodo)
-  var expected2 = "object";
-  t.equal(typeof(actual1), expected2, "Delete Func: type should equal object")
-  var actual3 = todoFunctions.deleteTodo(state, obId);
-  var expected3 = state
-  t.notEqual(actual3, expected3, "Delete Func: cloned object not the same as original object")
+  t.end();
+})
+
+//Testing function type returns Object
+test('sort items', function(t) {
+  var actual = todoFunctions.deleteTodo(state, newTodo)
+  var expected = "object";
+  t.equal(typeof(actual), expected, "Delete Func: type should equal object")
+  t.end();
+})
+
+//Testing that the cloned object and original object are not the same object
+test('sort items', function(t) {
+  var actual = todoFunctions.deleteTodo(state, obId);
+  var expected = state
+  t.notEqual(actual, expected, "Delete Func: cloned object not the same as original object")
   t.end();
 })
 
 
+//#####################################################################
+//MARK ITEM TESTS
+
+
+//Testing that function changes the done status of the object
 test('mark item', function(t) {
-  // t.pass();
   var actual = todoFunctions.markTodo(state, markID)[3].done;
   var expected = !state[3].done 
   t.equal(actual,expected,"Mark Func: done status should equal true (has changed relative to itself)")
-  var actual1a = todoFunctions.markTodo(state, markID)[3].done;
-  var expected1a = true; 
-  t.equal(actual1a,expected1a,"Mark Func: done status should equal true (has changed from false to true)")
-  var actual1 = todoFunctions.markTodo(state, markID)[0].done;
-  var expected1 = !state[1].done 
-  t.equal(actual1,expected1,"Mark Func: done status should equal false (no change)")
-  var actual2 = todoFunctions.markTodo(state, markID)
-  var expected2 = "object";
-  t.equal(typeof(actual2), expected2, "Mark Func: type should equal object")
-  var actual3 = todoFunctions.markTodo(state, markID);
-  var expected3 = state
-  t.notEqual(actual3, expected3, "Mark Func: cloned object not the same as original object")
+  t.end();
+})
+
+//Testing that function correctly changes value from false to true
+test('mark item', function(t) {
+  var actual = todoFunctions.markTodo(state, markID)[3].done;
+  var expected = true; 
+  t.equal(actual,expected,"Mark Func: done status should equal true (has changed from false to true)")
+  t.end();
+})
+
+//Testing that when one object is changed, the other objects are not also changed
+test('mark item', function(t) {
+  var actual = todoFunctions.markTodo(state, markID)[0].done;
+  var expected = !state[1].done 
+  t.equal(actual,expected,"Mark Func: done status should equal false (no change)")
+  t.end();
+})
+
+//Testing that function returns object
+test('mark item', function(t) {
+  var actual = todoFunctions.markTodo(state, markID)
+  var expected = "object";
+  t.equal(typeof(actual), expected, "Mark Func: type should equal object")
+  t.end();
+})
+
+//Testing that the cloned object and original object are not the same object
+test('mark item', function(t) {
+  var actual = todoFunctions.markTodo(state, markID);
+  var expected = state;
+  t.notEqual(actual, expected, "Mark Func: cloned object not the same as original object")
   t.end();
 });
 
+
+//#####################################################################
+//SORT ITEM TESTS
+
+
+//Testing that function returns object
 test('sort items', function(t) {
-  var actual1 = todoFunctions.sortTodos(state, numSort)
-  var expected1 = "object";
-  t.equal(typeof(actual1), expected1, "Sort Func: type should equal object")
-  var actual2 = todoFunctions.sortTodos(state, numSort);
-  var expected2 = state
-  t.deepEqual(actual2, expected2, "Sort Func: contents the same as previous object, just in different order")
-  var actual3 = todoFunctions.sortTodos(state, numSort);
-  var expected3 = state
-  t.notEqual(actual3, expected3, "Sort Func: cloned object not the same as original object")
-  var actual3 = todoFunctions.sortTodos(state, numSort)[0].id < todoFunctions.sortTodos(state, numSort)[1].id;
-  var expected3 = true;
-  t.equal(actual3, expected3, "Sort Func: ID at index 0 is smaller than ID at index 1, expecting true")
-  var actual3 = todoFunctions.sortTodos(state, numSort)[4].id < todoFunctions.sortTodos(state, numSort)[3].id;
-  var expected3 = false;
-  t.equal(actual3, expected3, "Sort Func: ID at index 3 is not smaller than than ID at index 4, expecting false")
+  var actual = todoFunctions.sortTodos(state, numSort)
+  var expected = "object";
+  t.equal(typeof(actual), expected, "Sort Func: type should equal object")
   t.end();
 })
+
+
+//Testing that although order is changed, the contents of the object are not altered 
+test('sort items', function(t) { 
+  var actual = todoFunctions.sortTodos(state, numSort);
+  var expected = state
+  t.deepEqual(actual, expected, "Sort Func: contents the same as previous object, just in different order")
+  t.end();
+})
+
+//Testing that the cloned object and original object are not the same object
+test('sort items', function(t) {
+  var actual = todoFunctions.sortTodos(state, numSort);
+  var expected = state
+  t.notEqual(actual, expected, "Sort Func: cloned object not the same as original object")
+  t.end();
+})
+
+
+//Testing that once sorted, the object at index 0 has a smaller ID than the object at index 1
+test('sort items', function(t) {
+  var actual = todoFunctions.sortTodos(state, numSort)[0].id < todoFunctions.sortTodos(state, numSort)[1].id;
+  var expected = true;
+  t.equal(actual, expected, "Sort Func: ID at index 0 is smaller than ID at index 1, expecting true")
+  t.end();
+})
+
+
+//Testing that once sorted, the object at index 4 does NOT have a smaller id than the object at index 3.
+test('sort items', function(t) {
+  var actual = todoFunctions.sortTodos(state, numSort)[4].id < todoFunctions.sortTodos(state, numSort)[3].id;
+  var expected = false;
+  t.equal(actual, expected, "Sort Func: ID at index 3 is not smaller than than ID at index 4, expecting false")
+  t.end();
+})
+
+
+
+//#####################################################################
 
 
