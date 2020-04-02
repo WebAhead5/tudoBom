@@ -25,18 +25,23 @@
       console.log(todoNode)
       if (todo.done == true) {
         todoSpan.className = "checked";
+        document.getElementById("box1").innerHTML += `<spam>${todo.description}</spam>`
       }
       else {
         todoSpan.className = "notchecked";
+        document.getElementById("box2").innerHTML += `<spam1>${todo.description}</spam1>`
       }
         
       todoNode.appendChild(todoSpan);
         
-    if (todo.done == true) {
-     document.getElementById("box1").innerHTML += `<spam>${todo.description}</spam>`}else {
-     document.getElementById("box2").innerHTML += `<spam1>${todo.description}</spam1>`
-      }
 
+                      /******************************* */
+      //This code has the same condition as the previous if statement, combined the two - Morad.
+      // if (todo.done == true) {
+    //  document.getElementById("box1").innerHTML += `<spam>${todo.description}</spam>`}else {
+    //  document.getElementById("box2").innerHTML += `<spam1>${todo.description}</spam1>`
+    //   }
+                      /******************************* */
 
       
        
@@ -90,9 +95,10 @@
       var alphaSort = function(A, B) {
         let a = A.description.toLowerCase()
         let b = B.description.toLowerCase()
-        if(a < b ) return -1; 
-        if(a > b ) return 1; 
-        return 0; }
+        return a < b ? -1:
+               a > b ? 1:
+               0
+      }
         sortedArr = todoFunctions.sortTodos(state, alphaSort)
         printSort(sortedArr)
       })
@@ -108,9 +114,7 @@
 
       document.getElementById("sorted").innerHTML = ""
       arr.forEach( x => {
-
         document.getElementById("sorted").innerHTML += `<spam3>#${x.id} Task: ${x.description}</spam3>`
-
       })
 
     }

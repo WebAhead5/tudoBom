@@ -12,7 +12,7 @@ function getGif(){
       gifDom.src = link;
     })
     .catch(function(error){
-      console.log("Well, that's an error...")
+      console.log("Well, that's an error...", error)
     })
   }
   getGif();
