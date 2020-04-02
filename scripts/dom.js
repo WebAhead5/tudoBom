@@ -34,16 +34,6 @@
         
       todoNode.appendChild(todoSpan);
         
-
-                      /******************************* */
-      //This code has the same condition as the previous if statement, combined the two - Morad.
-      // if (todo.done == true) {
-    //  document.getElementById("box1").innerHTML += `<spam>${todo.description}</spam>`}else {
-    //  document.getElementById("box2").innerHTML += `<spam1>${todo.description}</spam1>`
-    //   }
-                      /******************************* */
-
-      
        
       // this adds the delete button
       var deleteButtonNode = document.createElement('icon');
@@ -102,14 +92,7 @@
         sortedArr = todoFunctions.sortTodos(state, alphaSort)
         printSort(sortedArr)
       })
-  
-    // document.getElementById("dateBtn").addEventListener('click', function() { 
-    //     var dateSort = function(a, b) {return a.added - b.added}
-    //     var newState = todoFunctions.sortTodos(state, dateSort)
-    //     update(newState);
-    //     })
-  
-  
+
     function printSort(arr) {
 
       document.getElementById("sorted").innerHTML = ""
