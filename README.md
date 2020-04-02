@@ -8,6 +8,8 @@
 
 ![text](https://media.giphy.com/media/ce1moFx5xGZJylySZl/giphy.gif)
 
+### [Link to website](https://webahead5.github.io/tudoBom/)
+
 # Task
 
 To build a To Do list using <b>**Test Driven Development**</b>, making sure the following are incorprated:
@@ -20,7 +22,9 @@ The key here was to use <b>**Pure Functions**</b> that could be easily unit test
 
 We added addtional functionality in that the "done" items and the "not done" items are also presented into seperate lists so that the user can clearly see what tasks are left to do :heavy_check_mark:
 
-We also added the ability to sort the list via a drop down in both date and alphabetical order :heavy_check_mark:
+We also added the ability to sort the list in both date and alphabetical order :heavy_check_mark:
+
+Stretch goals were to have the items editable, however this feature is not yet implmented.
 
 
 # Process
@@ -45,7 +49,6 @@ On this task, we all worked together on one shared screen, taking on the tasks i
 
 ![](http://files.softicons.com/download/system-icons/ikons-icons-by-studiotwentyeight/png/128/Down.png)
  
-
 ![text](https://i.ibb.co/DMdPN2n/Webp-net-resizeimage.png)
 
 
